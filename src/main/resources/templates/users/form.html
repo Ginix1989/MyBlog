@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${userModel.title}">创建用户</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/header::header}"></div>
+<H3 th:text="${userModel.title}">Ginix</H3>
+ <!--链接用@-->
+<!--变量用$-->
+<!--属性选择用* 在当前 userModel 。user 查找user 中的ID 属性-->
+    <form action="/users"  th:action="@{/users}" method="post" th:object="${userModel.user}">
+<!--写法一 这么写， 教程上没有，这个也可以-->
+    <!--<input th:type="hidden" name="id" th:value="${user.id}">-->
+    <!--名称：<input type="text" name="name" th:value="${user.name}"/>-->
+    <!--邮箱：<input type="text" name ="email" th:value="${user.email}"/>-->
+    <!--<input type="submit" text="提交"/>-->
+    <input th:type="hidden" name="id" th:value="*{id}">
+    名称：<input type="text" name="name" th:value="*{name}"/>
+    邮箱：<input type="text" name ="email" th:value="*{email}"/>
+    <input type="submit" text="提交"/>
+
+</form>
+<div th:replace="~{fragments/footer::footer}"></div>
+</body>
+</html>
