@@ -1,0 +1,20 @@
+#mysq1
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+#      cluster-nodes 服务地址
+#      timeout 超时时间
+#  data:
+#    elasticsearch:
+#      cluster-nodes: localhost:9300
+#      properties:
+#        transport:
+#          tcp:
+#            connect_timeout: 120
+
+
+    #    配置 elasticSearch
+
